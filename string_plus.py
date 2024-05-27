@@ -46,8 +46,7 @@ fruit: str = "apple"
 %.<number of digits>f - Floating point numbers with a fixed amount of digits to the right of the dot.
 %x/%X - Integers in hex representation (lowercase/uppercase)
 """
-# TODO: declare data type for variable
-data_1 = {"name": name, "fruit": fruit}
+data_1: dict[str, str] = {"name": name, "fruit": fruit}
 method_1: str = "method 1: i'm %(name)s, i like %(fruit)r" % data_1
 
 data_2 = (name, fruit)
@@ -85,10 +84,8 @@ centered_message: str = message.center(string_width, fillchar)
 aligned_left: str = message.ljust(string_width, fillchar)
 aligned_right: str = message.rjust(string_width, fillchar)
 replaced_message: str = message.replace(string_to_find, new_string)
-
-# TODO: declare data type for variable
-splitted_message = message.split()
-partitioned_message = message.partition(separator)
+splitted_message: list[str] = message.split()
+partitioned_message: tuple[str, str, str] = message.partition(separator)
 
 result: str = f"""
 Count       : {count}

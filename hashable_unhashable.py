@@ -32,7 +32,7 @@ message_output: str = f"""
 print(message_output)
 
 
-""" list handling (not hashable object) - dictionary """
+""" list handling (not hashable object) - dictionary, set (can store hashable object) """
 values_1: list[int] = [1, 2, 3]
 values_2: list[int] = [4, 5, 6]
 
