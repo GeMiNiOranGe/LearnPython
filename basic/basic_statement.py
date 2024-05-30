@@ -94,4 +94,40 @@ ls_int: list[int] = [5, 1, 2, 3, 4]
 print(f"List old: {ls_int}")
 for i in range(len(ls_int)):
     ls_int[i] += 1
-print(f"List new: {ls_int}")
+print(f"List new: {ls_int}", end="\n\n")
+
+# ------------------------
+student_list: list[str] = [
+    "Jessica",
+    "Michael",
+    "Irene",
+    "Zelda",
+    "John",
+    "Abby",
+    "Bob",
+    "Tom",
+]
+student_list_with_index: enumerate[str] = enumerate(student_list)
+
+uppercase_student_list: list[str] = [
+    value.upper() for value in student_list if len(value) > 4
+]
+odd_numbers: dict[int, str] = {
+    key: "Hello " + value if key % 2 != 0 else "I'm " + value
+    for key, value in [
+        (1, "Jessica"),
+        (2, "Mike"),
+        (3, "John"),
+        (4, "Abby"),
+        (5, "Ashley"),
+    ]
+}
+
+print(student_list_with_index)
+print(list(student_list_with_index))
+
+for i, student in enumerate(student_list, start=1):
+    print(i, "->", student)
+
+print(uppercase_student_list)
+print(odd_numbers)
