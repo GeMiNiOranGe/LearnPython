@@ -23,52 +23,52 @@ class Person:
     # Property for "id"
     @property
     def id(self) -> int:
-        return self.__id
+        return self._id
 
     @id.setter
     def id(self, value: int) -> None:
         if not isinstance(value, int):
             raise TypeError("'id' must be set to int")
-        self.__id = value
+        self._id = value
 
     @id.deleter
     def id(self) -> None:
-        del self.__id
+        del self._id
 
     # Property for "name"
     @property
     def name(self) -> str:
-        return self.__name
+        return self._name
 
     @name.setter
     def name(self, value: str) -> None:
         if not isinstance(value, str):
             raise TypeError("'name' must be set to string")
-        self.__name = value.capitalize()
+        self._name = value.capitalize()
 
     @name.deleter
     def name(self) -> None:
-        del self.__name
+        del self._name
 
     # Property for "sex"
     @property
     def sex(self) -> str:
-        return self.__sex
+        return self._sex
 
     @sex.setter
     def sex(self, value: str) -> None:
         if not isinstance(value, str):
             raise TypeError("'sex' must be set to string")
-        self.__sex = value.lower()
+        self._sex = value.lower()
 
     @sex.deleter
     def sex(self) -> None:
-        del self.__sex
+        del self._sex
 
     # Property for "age"
     @property
     def age(self) -> int:
-        return self.__age
+        return self._age
 
     @age.setter
     def age(self, value: int) -> None:
@@ -76,26 +76,26 @@ class Person:
             raise TypeError("'age' must be set to int")
         if value < 0:
             raise NotInRangeException("age", "0", "inf")
-        self.__age = value
+        self._age = value
 
     @age.deleter
     def age(self) -> None:
-        del self.__age
+        del self._age
 
     # Property for "phone_number"
     @property
     def phone_number(self) -> str | None:
-        return self.__phone_number
+        return self._phone_number
 
     @phone_number.setter
     def phone_number(self, value: str | None) -> None:
-        if not isinstance(value, str | None):
+        if not isinstance(value, (str, type(None))):
             raise TypeError("'phone_number' must be set to string")
-        self.__phone_number = value
+        self._phone_number = value
 
     @phone_number.deleter
     def phone_number(self) -> None:
-        del self.__phone_number
+        del self._phone_number
 
     # endregion
 

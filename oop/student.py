@@ -18,19 +18,19 @@ class Student(Person):
     # Property for "grade"
     @property
     def grade(self) -> int | None:
-        return self.__grade
+        return self._grade
 
     @grade.setter
     def grade(self, value: int | None) -> None:
-        if not isinstance(value, int | None):
+        if not isinstance(value, (int, type(None))):
             raise TypeError("'grade' must be set to 'int | None'")
         if value is not None and (int(value) < 1 or 12 < int(value)):
             raise NotInRangeException("grade", "1", "12")
-        self.__grade = value
+        self._grade = value
 
     @grade.deleter
     def grade(self) -> None:
-        del self.__grade
+        del self._grade
 
     # endregion
 
