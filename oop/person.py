@@ -91,6 +91,8 @@ class Person:
     def phone_number(self, value: str | None) -> None:
         if not isinstance(value, (str, type(None))):
             raise TypeError("'phone_number' must be set to string")
+        if value is not None and not value.isdigit():
+            raise ValueError("'phone_number' must be a digit")
         self._phone_number = value
 
     @phone_number.deleter
