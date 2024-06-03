@@ -7,7 +7,7 @@ def main() -> None:
     separated_messages: str
 
     try:
-        separated_messages = separate_each_char(message, delimiter="||")
+        separated_messages = separate_each_char(message)
     except TypeError as type_error:
         print(f"separate_each_char(): {type_error}")
     else:
