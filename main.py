@@ -4,14 +4,14 @@ import data_structures.tuple
 
 def main() -> None:
     message: str = "Hello world!!!"
-    separated_messages: str
+    separate_message: str
 
     try:
-        separated_messages = separate_each_char(message)
+        separate_message = separate_each_char(message)
     except TypeError as type_error:
         print(f"separate_each_char(): {type_error}")
     else:
-        print(separated_messages)
+        print(separate_message)
     finally:
         print("Program end")
 
